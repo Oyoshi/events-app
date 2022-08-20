@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PageTemplate from "templates/page-template";
 import AllEventsPage from "pages/all-events-page";
 import EventPage from "pages/event-page";
 

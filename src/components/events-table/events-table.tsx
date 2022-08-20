@@ -11,14 +11,21 @@ import {
   Link,
 } from "@mui/material";
 import { Edit, Delete } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "hooks";
+import { removeEvent } from "store/reducers/events";
 import { EventsTableProps } from "./events-table.interface";
 import { TABLE_HEADERS } from "./events-table.const";
 
 const EventsTable: FC<EventsTableProps> = ({ events }) => {
   const { t } = useTranslation();
 
-  const handleOnEdit = () => console.log("Edit");
-  const handleOnDelete = () => console.log("Delete");
+  const dispatch = useAppDispatch();
+
+  const navigate = useNavigate();
+
+  const handleOnEdit = (id: string) => navigate(`/events/${id}`);
+  const handleOnDelete = (id: string) => dispatch(removeEvent({ id }));
 
   return (
     <Table>
@@ -49,10 +56,10 @@ const EventsTable: FC<EventsTableProps> = ({ events }) => {
               {event.endDate.toLocaleDateString()}
             </TableCell>
             <TableCell align="right">
-              <IconButton onClick={handleOnEdit}>
+              <IconButton onClick={() => handleOnEdit(event.id)}>
                 <Edit />
               </IconButton>
-              <IconButton onClick={handleOnDelete}>
+              <IconButton onClick={() => handleOnDelete(event.id)}>
                 <Delete />
               </IconButton>
             </TableCell>

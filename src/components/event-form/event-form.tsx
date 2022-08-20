@@ -3,23 +3,29 @@ import { Box, TextField, Button } from "@mui/material";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { useTranslation } from "react-i18next";
 import { useForm, Controller } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useAppSelector } from "hooks";
+import { selectEvent } from "store/reducers";
 import { EventFormProps } from "./event-form.interface";
 
 const EventForm: FC<EventFormProps> = ({ onSubmit }) => {
   const { t } = useTranslation();
 
-  const { control, handleSubmit } = useForm({
-    defaultValues: {
-      name: "",
-      startDate: new Date(),
-      endDate: new Date(),
-    },
-  });
+  const params = useParams();
+
+  const event = useAppSelector((state) => selectEvent(state, params.id));
 
   const navigate = useNavigate();
 
-  const handleCancel = () => navigate("/events");
+  const handleOnCancel = () => navigate("/events");
+
+  const { control, handleSubmit } = useForm({
+    defaultValues: {
+      name: event?.name || "",
+      startDate: event?.startDate || new Date(),
+      endDate: event?.endDate || new Date(),
+    },
+  });
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -91,7 +97,7 @@ const EventForm: FC<EventFormProps> = ({ onSubmit }) => {
                 gap: 2,
               }}
             >
-              <Button variant="contained" onClick={handleCancel}>
+              <Button variant="contained" onClick={handleOnCancel}>
                 {t("cancel")}
               </Button>
               <Button variant="contained" type="submit">
