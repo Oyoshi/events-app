@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PageTemplate from "templates/page-template";
+import EventPage from "pages/event-page";
 
 export default function Router() {
   return (
@@ -14,22 +15,8 @@ export default function Router() {
               </PageTemplate>
             }
           />
-          <Route
-            path="new"
-            element={
-              <PageTemplate>
-                <h2>New Event Page</h2>
-              </PageTemplate>
-            }
-          />
-          <Route
-            path=":id"
-            element={
-              <PageTemplate>
-                <h2>Edit Event Page</h2>
-              </PageTemplate>
-            }
-          />
+          <Route path="new" element={<EventPage />} />
+          <Route path=":id" element={<EventPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

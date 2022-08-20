@@ -2,7 +2,12 @@
   "en": {
     "translation": {
       "events": "Events",
-      "create-event": "Add new event"
+      "create-event": "Add new event",
+      "event-name": "Event name",
+      "event-start-date": "Event start date",
+      "event-end-date": "Event end date",
+      "cancel": "Cancel",
+      "save": "Save"
     }
   }
 }

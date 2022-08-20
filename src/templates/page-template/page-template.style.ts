@@ -5,6 +5,6 @@ import { SCPageTemplateProps } from "./page-template.interface";
 export const SCPageContainer = styled(Box, {
   shouldForwardProp: (prop) => prop !== "fullWidth",
 })<SCPageTemplateProps>(({ fullWidth }) => ({
-  maxWidth: fullWidth ? "95vw" : "1024px",
+  maxWidth: fullWidth ? "1024px" : "512px",
   margin: "2em auto",
 }));
