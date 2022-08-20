@@ -22,8 +22,8 @@ const EventForm: FC<EventFormProps> = ({ onSubmit }) => {
   const { control, handleSubmit } = useForm({
     defaultValues: {
       name: event?.name || "",
-      startDate: event?.startDate || new Date(),
-      endDate: event?.endDate || new Date(),
+      startDate: event ? new Date(event.startDateTimeStamp) : new Date(),
+      endDate: event ? new Date(event.endDateTimeStamp) : new Date(),
     },
   });
 

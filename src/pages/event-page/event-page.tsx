@@ -14,12 +14,18 @@ export default function EventPage() {
   const handleOnSubmit = (data: EventFormData) => {
     const { id } = params;
     if (id) {
-      dispatch(updateEvent({ id, ...data }));
+      dispatch(updateEvent({ id, ...createEventObject(data) }));
     } else {
-      dispatch(createEvent(data));
+      dispatch(createEvent(createEventObject(data)));
     }
     navigate("/events");
   };
+
+  const createEventObject = (data: EventFormData) => ({
+    name: data.name,
+    startDateTimeStamp: data.startDate.getTime(),
+    endDateTimeStamp: data.endDate.getTime(),
+  });
 
   return (
     <PageTemplate>

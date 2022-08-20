@@ -1,7 +1,7 @@
 export interface EventBase {
   name: string;
-  startDate: Date;
-  endDate: Date;
+  startDateTimeStamp: number;
+  endDateTimeStamp: number;
 }
 
 export interface Event extends EventBase {
