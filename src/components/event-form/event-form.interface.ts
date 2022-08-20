@@ -1,9 +1,9 @@
-export type FormData = {
-  eventName: string;
-  eventStartDate: Date;
-  eventEndDate: Date;
+export type EventFormData = {
+  name: string;
+  startDate: Date;
+  endDate: Date;
 };
 
 export interface EventFormProps {
-  onSubmit: (data: FormData) => void;
+  onSubmit: (data: EventFormData) => void;
 }

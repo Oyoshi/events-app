@@ -7,7 +7,8 @@
       "event-start-date": "Event start date",
       "event-end-date": "Event end date",
       "cancel": "Cancel",
-      "save": "Save"
+      "save": "Save",
+      "actions": "Actions"
     }
   }
 }

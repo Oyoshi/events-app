@@ -1,8 +1,8 @@
 import PageTemplate from "templates/page-template";
-import EventForm, { FormData } from "components/event-form";
+import EventForm, { EventFormData } from "components/event-form";
 
 export default function EventPage() {
-  const onSubmit = (data: FormData) => {
+  const onSubmit = (data: EventFormData) => {
     console.log(data);
   };
 

@@ -11,9 +11,9 @@ const EventForm: FC<EventFormProps> = ({ onSubmit }) => {
 
   const { control, handleSubmit } = useForm({
     defaultValues: {
-      eventName: "",
-      eventStartDate: new Date(),
-      eventEndDate: new Date(),
+      name: "",
+      startDate: new Date(),
+      endDate: new Date(),
     },
   });
 
@@ -32,11 +32,11 @@ const EventForm: FC<EventFormProps> = ({ onSubmit }) => {
           }}
         >
           <Controller
-            name="eventName"
+            name="name"
             control={control}
             render={({ field }) => (
               <TextField
-                id="eventName"
+                id="name"
                 label={t("event-name")}
                 variant="standard"
                 {...field}
@@ -52,7 +52,7 @@ const EventForm: FC<EventFormProps> = ({ onSubmit }) => {
             }}
           >
             <Controller
-              name="eventStartDate"
+              name="startDate"
               control={control}
               render={({ field }) => (
                 <DesktopDatePicker
@@ -64,7 +64,7 @@ const EventForm: FC<EventFormProps> = ({ onSubmit }) => {
               )}
             />
             <Controller
-              name="eventEndDate"
+              name="endDate"
               control={control}
               render={({ field }) => (
                 <DesktopDatePicker

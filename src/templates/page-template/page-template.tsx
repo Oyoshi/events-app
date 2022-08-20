@@ -4,11 +4,11 @@ import Navbar from "components/navbar";
 import { SCPageContainer } from "./page-template.style";
 import { PageTemplateProps } from "./page-template.interface";
 
-const PageTemplate: FC<PageTemplateProps> = ({ fullWidth, children }) => {
+const PageTemplate: FC<PageTemplateProps> = ({ wide, children }) => {
   return (
     <Box>
       <Navbar />
-      <SCPageContainer fullWidth={fullWidth}>{children}</SCPageContainer>
+      <SCPageContainer wide={wide}>{children}</SCPageContainer>
     </Box>
   );
 };

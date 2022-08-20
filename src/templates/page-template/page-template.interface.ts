@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export interface SCPageTemplateProps {
-  fullWidth?: boolean;
+  wide?: boolean;
 }
 
 export interface PageTemplateProps extends SCPageTemplateProps {
