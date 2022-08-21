@@ -29,7 +29,7 @@ export default function EventPage() {
 
   return (
     <PageTemplate>
-      <EventForm onSubmit={handleOnSubmit} />
+      <EventForm onSubmit={handleOnSubmit} eventId={params.id} />
     </PageTemplate>
   );
 }

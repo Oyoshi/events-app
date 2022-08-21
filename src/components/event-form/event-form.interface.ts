@@ -6,4 +6,5 @@ export type EventFormData = {
 
 export interface EventFormProps {
   onSubmit: (data: EventFormData) => void;
+  eventId?: string;
 }

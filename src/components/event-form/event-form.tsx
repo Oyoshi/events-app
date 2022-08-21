@@ -3,28 +3,33 @@ import { Box, TextField, Button } from "@mui/material";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { useTranslation } from "react-i18next";
 import { useForm, Controller } from "react-hook-form";
-import { useNavigate, useParams } from "react-router-dom";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "hooks";
 import { selectEvent } from "store/reducers";
+import { eventFormSchema } from "./event-form.schema";
 import { EventFormProps } from "./event-form.interface";
 
-const EventForm: FC<EventFormProps> = ({ onSubmit }) => {
+const EventForm: FC<EventFormProps> = ({ onSubmit, eventId }) => {
   const { t } = useTranslation();
 
-  const params = useParams();
-
-  const event = useAppSelector((state) => selectEvent(state, params.id));
+  const event = useAppSelector((state) => selectEvent(state, eventId));
 
   const navigate = useNavigate();
 
   const handleOnCancel = () => navigate("/events");
 
-  const { control, handleSubmit } = useForm({
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
     defaultValues: {
       name: event?.name || "",
       startDate: event ? new Date(event.startDateTimeStamp) : new Date(),
       endDate: event ? new Date(event.endDateTimeStamp) : new Date(),
     },
+    resolver: yupResolver(eventFormSchema),
   });
 
   return (
@@ -45,6 +50,8 @@ const EventForm: FC<EventFormProps> = ({ onSubmit }) => {
                 id="name"
                 label={t("event-name")}
                 variant="standard"
+                error={errors.name !== undefined}
+                helperText={errors.name?.message}
                 {...field}
               />
             )}
@@ -64,7 +71,13 @@ const EventForm: FC<EventFormProps> = ({ onSubmit }) => {
                 <DesktopDatePicker
                   label={t("event-start-date")}
                   inputFormat="dd-MM-yyyy"
-                  renderInput={(params) => <TextField {...params} />}
+                  renderInput={(params) => (
+                    <TextField
+                      error={errors.startDate !== undefined}
+                      helperText={errors.startDate?.message}
+                      {...params}
+                    />
+                  )}
                   {...field}
                 />
               )}
@@ -76,7 +89,13 @@ const EventForm: FC<EventFormProps> = ({ onSubmit }) => {
                 <DesktopDatePicker
                   label={t("event-end-date")}
                   inputFormat="dd-MM-yyyy"
-                  renderInput={(params) => <TextField {...params} />}
+                  renderInput={(params) => (
+                    <TextField
+                      error={errors.endDate !== undefined}
+                      helperText={errors.endDate?.message}
+                      {...params}
+                    />
+                  )}
                   {...field}
                 />
               )}
