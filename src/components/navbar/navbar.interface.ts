@@ -6,3 +6,7 @@ export type NavLink = {
 export type Language = {
   name: string;
 };
+
+export interface NavbarProps {
+  onSearch?: (val: string) => void;
+}

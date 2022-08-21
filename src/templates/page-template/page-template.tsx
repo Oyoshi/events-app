@@ -4,10 +4,10 @@ import Navbar from "components/navbar";
 import { SCPageContainer } from "./page-template.style";
 import { PageTemplateProps } from "./page-template.interface";
 
-const PageTemplate: FC<PageTemplateProps> = ({ wide, children }) => {
+const PageTemplate: FC<PageTemplateProps> = ({ wide, onSearch, children }) => {
   return (
     <Box>
-      <Navbar />
+      <Navbar onSearch={onSearch} />
       <SCPageContainer wide={wide}>{children}</SCPageContainer>
     </Box>
   );

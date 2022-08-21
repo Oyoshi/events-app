@@ -34,7 +34,12 @@ const eventsSlice = createSlice({
 
 export const { createEvent, removeEvent, updateEvent } = eventsSlice.actions;
 
-export const selectEvents = (state: RootState) => state.events.eventsList;
+export const selectEvents = (state: RootState, searchPhrase?: string) =>
+  searchPhrase
+    ? state.events.eventsList.filter((event: Event) =>
+        event.name.includes(searchPhrase)
+      )
+    : state.events.eventsList;
 
 export const selectEvent = (state: RootState, id?: string) =>
   id ? state.events.eventsList.find((event: Event) => event.id === id) : null;

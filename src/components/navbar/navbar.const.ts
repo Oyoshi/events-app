@@ -19,3 +19,5 @@ export const LANGUAGES: Language[] = [
     name: "en",
   },
 ];
+
+export const DEBOUNCE_DELAY_IN_MS = 500;

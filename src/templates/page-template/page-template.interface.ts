@@ -5,5 +5,6 @@ export interface SCPageTemplateProps {
 }
 
 export interface PageTemplateProps extends SCPageTemplateProps {
+  onSearch?: (val: string) => void;
   children: ReactNode;
 }

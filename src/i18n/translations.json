@@ -11,7 +11,8 @@
       "actions": "Actions",
       "field-is-required": "{{field}} is required",
       "pl": "Polish",
-      "en": "English"
+      "en": "English",
+      "search": "Search..."
     }
   },
   "pl": {
@@ -26,7 +27,8 @@
       "actions": "Akcje",
       "field-is-required": "{{field}} jest wymagana",
       "pl": "Polski",
-      "en": "Angielski"
+      "en": "Angielski",
+      "search": "Szukaj..."
     }
   }
 }
