@@ -51,7 +51,10 @@ const EventForm: FC<EventFormProps> = ({ onSubmit, eventId }) => {
                 label={t("event-name")}
                 variant="standard"
                 error={errors.name !== undefined}
-                helperText={errors.name?.message}
+                helperText={
+                  errors.name &&
+                  t("field-is-required", { field: t("event-name") })
+                }
                 {...field}
               />
             )}
@@ -74,7 +77,10 @@ const EventForm: FC<EventFormProps> = ({ onSubmit, eventId }) => {
                   renderInput={(params) => (
                     <TextField
                       error={errors.startDate !== undefined}
-                      helperText={errors.startDate?.message}
+                      helperText={
+                        errors.startDate &&
+                        t("field-is-required", { field: t("event-start-date") })
+                      }
                       {...params}
                     />
                   )}
@@ -92,7 +98,10 @@ const EventForm: FC<EventFormProps> = ({ onSubmit, eventId }) => {
                   renderInput={(params) => (
                     <TextField
                       error={errors.endDate !== undefined}
-                      helperText={errors.endDate?.message}
+                      helperText={
+                        errors.endDate &&
+                        t("field-is-required", { field: t("event-end-date") })
+                      }
                       {...params}
                     />
                   )}

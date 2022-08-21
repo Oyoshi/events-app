@@ -1,4 +1,4 @@
-import { NavLink } from "./navbar.interface";
+import { NavLink, Language } from "./navbar.interface";
 
 export const LINKS: NavLink[] = [
   {
@@ -8,5 +8,14 @@ export const LINKS: NavLink[] = [
   {
     title: "create-event",
     to: "/events/new",
+  },
+];
+
+export const LANGUAGES: Language[] = [
+  {
+    name: "pl",
+  },
+  {
+    name: "en",
   },
 ];

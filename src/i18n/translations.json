@@ -8,7 +8,10 @@
       "event-end-date": "Event end date",
       "cancel": "Cancel",
       "save": "Save",
-      "actions": "Actions"
+      "actions": "Actions",
+      "field-is-required": "{{field}} is required",
+      "pl": "Polish",
+      "en": "English"
     }
   },
   "pl": {
@@ -20,7 +23,10 @@
       "event-end-date": "Data końca",
       "cancel": "Anuluj",
       "save": "Zapisz",
-      "actions": "Akcje"
+      "actions": "Akcje",
+      "field-is-required": "{{field}} jest wymagana",
+      "pl": "Polski",
+      "en": "Angielski"
     }
   }
 }
