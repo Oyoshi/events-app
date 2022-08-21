@@ -10,5 +10,17 @@
       "save": "Save",
       "actions": "Actions"
     }
+  },
+  "pl": {
+    "translation": {
+      "events": "Wydarzenia",
+      "create-event": "Dodaj wydarzenie",
+      "event-name": "Nazwa wydarzenia",
+      "event-start-date": "Data początku",
+      "event-end-date": "Data końca",
+      "cancel": "Anuluj",
+      "save": "Zapisz",
+      "actions": "Akcje"
+    }
   }
 }

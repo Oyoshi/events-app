@@ -70,7 +70,7 @@ const EventForm: FC<EventFormProps> = ({ onSubmit, eventId }) => {
               render={({ field }) => (
                 <DesktopDatePicker
                   label={t("event-start-date")}
-                  inputFormat="dd-MM-yyyy"
+                  inputFormat="dd.MM.yyyy"
                   renderInput={(params) => (
                     <TextField
                       error={errors.startDate !== undefined}
@@ -88,7 +88,7 @@ const EventForm: FC<EventFormProps> = ({ onSubmit, eventId }) => {
               render={({ field }) => (
                 <DesktopDatePicker
                   label={t("event-end-date")}
-                  inputFormat="dd-MM-yyyy"
+                  inputFormat="dd.MM.yyyy"
                   renderInput={(params) => (
                     <TextField
                       error={errors.endDate !== undefined}

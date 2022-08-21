@@ -5,6 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { store } from "store";
+import ColorModeContextProvider from "./theme";
 import Router from "./router";
 
 export default function App() {
@@ -12,8 +13,10 @@ export default function App() {
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <I18nextProvider i18n={i18nInit}>
         <Provider store={store}>
-          <CssBaseline />
-          <Router />
+          <ColorModeContextProvider>
+            <CssBaseline />
+            <Router />
+          </ColorModeContextProvider>
         </Provider>
       </I18nextProvider>
     </LocalizationProvider>

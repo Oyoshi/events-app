@@ -1,11 +1,22 @@
 import { Link as RouterLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { AppBar, Toolbar, Button, Link } from "@mui/material";
+import { AppBar, Toolbar, Button, Link, Box, IconButton } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import { Brightness4, Brightness7, Translate } from "@mui/icons-material";
+import { useColorMode } from "hooks";
 import { LINKS } from "./navbar.const";
 import { NavLink } from "./navbar.interface";
 
 export default function Navbar() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const theme = useTheme();
+
+  const { toggleColorMode } = useColorMode();
+
+  const changeLanguageHandler = () => {
+    i18n.changeLanguage("pl");
+  };
 
   return (
     <AppBar position="static">
@@ -22,6 +33,14 @@ export default function Navbar() {
             </Link>
           </Button>
         ))}
+        <Box sx={{ ml: "auto" }}>
+          <IconButton onClick={changeLanguageHandler} color="inherit">
+            <Translate />
+          </IconButton>
+          <IconButton onClick={toggleColorMode} color="inherit">
+            {theme.palette.mode === "dark" ? <Brightness7 /> : <Brightness4 />}
+          </IconButton>
+        </Box>
       </Toolbar>
     </AppBar>
   );
