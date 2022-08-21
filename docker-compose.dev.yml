@@ -1,12 +1,14 @@
 version: "3.9"
 
 services:
-  frontend:
-    build: .
+  events-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
     environment:
       - WATCHPACK_POLLING=true
     ports:
-      - 3000:3000
+      - "3000:3000"
     volumes:
       - ./src:/app/src:ro
     restart: always
