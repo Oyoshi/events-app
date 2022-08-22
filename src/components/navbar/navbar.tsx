@@ -25,7 +25,7 @@ import {
   SearchIconWrapper,
   StyledInputBase,
 } from "components/search-input";
-import { LINKS, LANGUAGES } from "./navbar.const";
+import { LINKS, LANGUAGES, DEBOUNCE_DELAY_IN_MS } from "./navbar.const";
 import { NavbarProps, NavLink, Language } from "./navbar.interface";
 
 const Navbar: FC<NavbarProps> = ({ onSearch }) => {
@@ -59,7 +59,7 @@ const Navbar: FC<NavbarProps> = ({ onSearch }) => {
   const handleSearch = useCallback(
     debounce((value) => {
       onSearch!(value);
-    }, 500),
+    }, DEBOUNCE_DELAY_IN_MS),
     []
   );
 

@@ -1,11 +1,11 @@
 # Events App
 
-Simple application for creating and managing events. Main technology stack:
+Simple application for creating and managing events. Main features are:
 
-1. [Redux](https://react-redux.js.org/)
-2. [MUI](https://mui.com/)
-3. [React Router](https://reactrouter.com/)
-4. [Docker](https://www.docker.com/)
+1. Creating, Updating and Deleting events ([Redux](https://react-redux.js.org/))
+2. Form data validation ([React Hook Form](https://react-hook-form.com/) and [Yup](https://github.com/jquense/yup))
+3. Dark/Light Theme switch ([MUI](https://mui.com/))
+4. Building and running app in `dev` and `prod` mode ([Docker](https://www.docker.com/))
 
 ## How to run :construction_worker:
 
