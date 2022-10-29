@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@hookform/resolvers": "^2.9.7",
     "@mui/icons-material": "^5.8.4",
-    "@mui/material": "^5.10.1",
-    "@mui/styled-engine-sc": "npm:@mui/styled-engine-sc@latest",
+    "@mui/material": "^5.10.11",
     "@mui/x-date-pickers": "^5.0.0-beta.6",
     "@reduxjs/toolkit": "^1.8.1",
     "@testing-library/jest-dom": "^5.16.4",
@@ -26,7 +27,6 @@
     "react-redux": "^8.0.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-    "styled-components": "^5.3.5",
     "typescript": "^4.6.0",
     "uuid": "^8.3.2",
     "web-vitals": "^2.1.0",
@@ -34,14 +34,13 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.3.3",
-    "@types/styled-components": "^5.1.26",
     "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "eslint-config-prettier": "^8.5.0",
     "husky": "^8.0.1",
-    "prettier": "^2.7.1",
-    "pretty-quick": "^3.1.3"
-  },
-  "resolutions": {
-    "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
   },
   "scripts": {
     "start": "react-scripts start",

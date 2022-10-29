@@ -7,7 +7,7 @@ import { PageTemplateProps } from "./page-template.interface";
 const PageTemplate: FC<PageTemplateProps> = ({ wide, onSearch, children }) => {
   return (
     <Box>
-      <Navbar onSearch={onSearch} />
+      <Navbar onSearch={onSearch} />{" "}
       <SCPageContainer wide={wide}>{children}</SCPageContainer>
     </Box>
   );
