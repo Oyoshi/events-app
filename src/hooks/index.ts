@@ -1,4 +1,4 @@
 export { useAppDispatch } from "./use-app-dispatch";
-export { useAppSelector } from "./use-app-selector";
 export { useEvent } from "./use-event";
+export { useAllEvents } from "./use-all-events";
 export { useColorMode } from "./use-color-mode";
