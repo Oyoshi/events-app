@@ -5,15 +5,14 @@ import { useTranslation } from "react-i18next";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
-import { useAppSelector } from "hooks";
-import { selectEvent } from "store/reducers";
+import { useEvent } from "hooks";
 import { eventFormSchema } from "./event-form.schema";
 import { EventFormProps } from "./event-form.interface";
 
 const EventForm: FC<EventFormProps> = ({ onSubmit, eventId }) => {
   const { t } = useTranslation();
 
-  const event = useAppSelector((state) => selectEvent(state, eventId));
+  const event = useEvent(eventId);
 
   const navigate = useNavigate();
 
