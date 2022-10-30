@@ -1,19 +1,28 @@
 import i18n from "i18next";
-import translations from "./translations.json";
+import { initReactI18next } from "react-i18next";
+import Backend from "i18next-http-backend";
+import LanguageDetector from "i18next-browser-languagedetector";
 
-export const eventsAppInstance = i18n.createInstance();
+const eventsAppInstance = i18n.createInstance();
 
-eventsAppInstance.init({
-  resources: translations,
-  lng: "en",
-  fallbackLng: "en",
-  interpolation: {
-    escapeValue: false,
-  },
-  saveMissing: true,
-  missingKeyHandler: (lng: readonly string[], ns: string, key: string) => {
-    console.error(`${key} does not exist in translations.json}`);
-  },
-});
+const missingKeyHandler = (lng: readonly string[], ns: string, key: string) => {
+  const errorMsg = `${key} does not exist in translation.json`;
+  alert(errorMsg);
+  throw new Error(errorMsg);
+};
+
+eventsAppInstance
+  .use(Backend)
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    fallbackLng: "en",
+    debug: true,
+    interpolation: {
+      escapeValue: false,
+    },
+    saveMissing: true,
+    missingKeyHandler: missingKeyHandler,
+  });
 
 export const i18nInit = eventsAppInstance;

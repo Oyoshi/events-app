@@ -1,0 +1,14 @@
+{
+    "events": "Wydarzenia",
+    "create-event": "Dodaj wydarzenie",
+    "event-name": "Nazwa wydarzenia",
+    "event-start-date": "Data początku",
+    "event-end-date": "Data końca",
+    "cancel": "Anuluj",
+    "save": "Zapisz",
+    "actions": "Akcje",
+    "field-is-required": "{{field}} jest wymagana",
+    "pl": "Polski",
+    "en": "Angielski",
+    "search": "Szukaj..."
+}
